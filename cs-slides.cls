@@ -1,6 +1,17 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cs-classes/cs-slides}[2024/01/28 A simple LaTeX class for Beamer-based slides]
+
+\newif\if@draft
+\DeclareOption{draft}{\@drafttrue}
+
+\ProcessOptions\relax
+
+\if@draft
+\LoadClass[aspectratio=169,draft]{beamer}
+\else
 \LoadClass[aspectratio=169]{beamer}
+\fi
+
 \usetheme{Singapore}
 
 \setbeamertemplate{caption}[numbered]
